@@ -18,7 +18,7 @@ fetch('/livros')
             fetch('/livros/concluir', {
                 method: 'PUT',
                 headers: {'Content-type': 'application/json'},
-                body: JSON.stringify({titulo: livros[i].titulo})
+                body: JSON.stringify({id: livros[i].id})
             })
             .then(function(resposta){
                 return resposta.json()
@@ -33,7 +33,7 @@ fetch('/livros')
             fetch('/livros/delete', {
                 method: 'DELETE',
                 headers: {'Content-type' : 'application/json'},
-                body: JSON.stringify({titulo: livros[i].titulo})
+                body: JSON.stringify({id: livros[i].id})
             })
             .then(function(resposta){
                 return resposta.json()
@@ -60,9 +60,11 @@ botao.addEventListener('click', function(){
 
     if (titulo === ''){
         alert('Digite um titulo para o livro.')
-    }
+        return
+    } 
     if (autor === ''){
         alert('Digite o nome do autor do livro')
+        return
     }
 
     fetch('/livros', {

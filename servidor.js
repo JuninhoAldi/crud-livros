@@ -40,8 +40,8 @@ app.get('/livros', function(req, res){
 })
 
 app.put('/livros/concluir', function(req, res){
-    const titulo = req.body.titulo
-    const resultado = db.prepare("UPDATE livros SET lido = 1 WHERE titulo = ?").run(titulo)
+    const id = req.body.id
+    const resultado = db.prepare("UPDATE livros SET lido = 1 WHERE id = ?").run(id)
 
     if(resultado.changes === 0){
         return res.status(404).json({erro: 'Livro nao encontrado.'})
@@ -51,8 +51,8 @@ app.put('/livros/concluir', function(req, res){
 })
 
 app.delete('/livros/delete', function(req, res){
-    const titulo = req.body.titulo
-    const resultado = db.prepare("DELETE FROM livros WHERE titulo = ?").run(titulo)
+    const id = req.body.id
+    const resultado = db.prepare("DELETE FROM livros WHERE id = ?").run(id)
 
     if(resultado.changes === 0){
         return res.status(404).json({erro: 'Livro nao encontrado.'})

@@ -1,0 +1,24 @@
+{
+  "name": "crud-livros",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuninhoAldi/crud-livros.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JuninhoAldi/crud-livros/issues"
+  },
+  "homepage": "https://github.com/JuninhoAldi/crud-livros#readme",
+  "description": "",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.2.1"
+  }
+}
